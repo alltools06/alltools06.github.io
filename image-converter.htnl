@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Converter - JPG to PNG & PNG to JPG</title>
+<meta name="description" content="Free online image converter tool. Convert JPG to PNG and PNG to JPG instantly.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{
+background:linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+color:#fff;
+}
+.container{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:600px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+text-align:center;
+}
+h1{margin-bottom:20px;font-size:28px}
+.upload-box{
+border:2px dashed rgba(255,255,255,0.5);
+padding:30px;
+border-radius:15px;
+cursor:pointer;
+margin-bottom:20px;
+transition:.3s;
+}
+.upload-box:hover{background:rgba(255,255,255,0.1)}
+input{display:none}
+select,button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+margin:10px 5px;
+font-size:14px;
+}
+select{background:#fff;color:#333}
+button{
+background:#00f2fe;
+background:linear-gradient(45deg,#00f2fe,#4facfe);
+color:#fff;
+cursor:pointer;
+}
+button:hover{opacity:.9}
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+display:none;
+}
+.download-btn{display:none}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Image Converter</h1>
+
+<label class="upload-box" id="dropArea">
+Click or Drag & Drop Image Here
+<input type="file" id="imageInput" accept="image/*">
+</label>
+
+<select id="formatSelect">
+<option value="image/png">Convert to PNG</option>
+<option value="image/jpeg">Convert to JPG</option>
+</select>
+
+<button onclick="convertImage()">Convert Image</button>
+<button class="download-btn" id="downloadBtn">Download</button>
+
+<img id="preview">
+
+</div>
+
+<script>
+
+const dropArea = document.getElementById("dropArea");
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+const downloadBtn = document.getElementById("downloadBtn");
+let uploadedImage = null;
+
+dropArea.addEventListener("click",()=>imageInput.click());
+
+imageInput.addEventListener("change",handleImage);
+
+dropArea.addEventListener("dragover",(e)=>{
+e.preventDefault();
+dropArea.style.background="rgba(255,255,255,0.2)";
+});
+
+dropArea.addEventListener("dragleave",()=>{
+dropArea.style.background="transparent";
+});
+
+dropArea.addEventListener("drop",(e)=>{
+e.preventDefault();
+dropArea.style.background="transparent";
+imageInput.files=e.dataTransfer.files;
+handleImage();
+});
+
+function handleImage(){
+const file=imageInput.files[0];
+if(!file) return;
+
+const reader=new FileReader();
+reader.onload=function(e){
+uploadedImage=new Image();
+uploadedImage.src=e.target.result;
+preview.src=e.target.result;
+preview.style.display="block";
+downloadBtn.style.display="none";
+};
+reader.readAsDataURL(file);
+}
+
+function convertImage(){
+if(!uploadedImage){alert("Please upload image");return;}
+
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=uploadedImage.width;
+canvas.height=uploadedImage.height;
+
+uploadedImage.onload=function(){
+ctx.drawImage(uploadedImage,0,0);
+
+const format=document.getElementById("formatSelect").value;
+const converted=canvas.toDataURL(format,1.0);
+
+preview.src=converted;
+downloadBtn.style.display="inline-block";
+
+downloadBtn.onclick=function(){
+const link=document.createElement("a");
+link.href=converted;
+link.download="converted-image";
+link.click();
+};
+};
+}
+
+</script>
+
+</body>
+</html>
