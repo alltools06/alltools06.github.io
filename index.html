@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- SEO optimized meta tags -->
-  <meta name="description" content="ALL Tools06: 85+ free online tools for images, documents, calculators, QR codes, colors and more. Fast, modern and easy to use.">
-  <meta name="keywords" content="online tools, image converter, pdf tools, calculator, qr generator, color picker, developer tools">
-  <meta name="author" content="ALL Tools06">
-  <title>ALL Tools06 · 85+ premium free tools</title>
+  <meta name="description" content="AllTool88.com: 88+ free online tools for images, documents, calculators, QR codes, colors and more. Fast, modern and easy to use.">
+  <meta name="keywords" content="online tools, image converter, pdf tools, calculator, qr generator, color picker, background remover, image enhancer">
+  <meta name="author" content="AllTool88.com">
+  <title>AllTool88.com · 88+ premium free tools</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Fonts -->
@@ -26,75 +26,175 @@
     body.dark .btn { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
     body.dark .search-box input { background: #1e293b; color: white; border-color: #334155; }
 
-    /* sticky glass navbar */
-    header { position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-    .logo { font-weight: 700; font-size: 20px; display: flex; align-items: center; gap: 8px; }
-    .nav-links { display: flex; gap: 20px; align-items: center; }
-    nav a { text-decoration: none; color: #0f172a; font-weight: 500; transition: .3s; margin-left: 20px; }
+    /* ===== NORMAL HEADER SIZE ===== */
+    header {
+      position: fixed; width: 100%; top: 0; z-index: 1000;
+      background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 8%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-weight: 700; font-size: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo i { font-size: 24px; }
+    nav a {
+      text-decoration: none; color: #0f172a; font-weight: 500;
+      transition: .3s; margin-left: 20px; font-size: 16px;
+    }
     nav a:hover { color: #4f46e5; }
     .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-    .dark-toggle { background: none; border: none; font-size: 20px; cursor: pointer; color: inherit; margin-left: 15px; }
+    .dark-toggle {
+      background: none; border: none; font-size: 20px;
+      cursor: pointer; color: inherit; margin-left: 15px;
+    }
 
     /* hero */
     .hero { padding: 140px 8% 80px; text-align: center; }
     .hero h1 { font-size: 42px; margin-bottom: 20px; }
     .hero p { color: #475569; margin-bottom: 30px; }
     body.dark .hero p { color: #94a3b8; }
-    .btn { padding: 12px 28px; background: linear-gradient(90deg, #2563eb, #7c3aed); color: white; border: none; border-radius: 30px; cursor: pointer; text-decoration: none; transition: .3s; display: inline-block; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+    /* ========== LARGER FILTER BUTTONS ========== */
+    .filter-container {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      margin: 30px 0 40px;
+    }
+    .filter-btn {
+      padding: 12px 24px;
+      border-radius: 40px;
+      border: 1px solid #cbd5e1;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .filter-btn:hover {
+      background: #4f46e5; color: white; border-color: #4f46e5;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25);
+    }
+    .filter-btn.active {
+      background: #4f46e5; color: white; border-color: #4f46e5;
+    }
+    /* =========================================== */
+
+    /* ========== BUTTON ANIMATIONS (NORMAL SIZE) ========== */
+    .btn, .btn-sm {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .btn {
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      color: white; border: none; border-radius: 30px;
+      cursor: pointer; text-decoration: none; display: inline-block;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    }
+    .btn:active {
+      transform: translateY(-1px) scale(0.98);
+      box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-sm {
+      padding: 8px 18px;
+      font-size: 14px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      color: white;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      width: auto;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+      margin-top: 8px;
+    }
+    .btn-sm:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    }
+    .btn-sm:active {
+      transform: translateY(0) scale(0.97);
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    .dark-toggle:hover {
+      transform: rotate(15deg) scale(1.1);
+      color: #4f46e5;
+    }
+    /* ====================================== */
 
     /* search */
     .search-box { margin: 40px auto; max-width: 500px; }
-    .search-box input { width: 100%; padding: 14px 20px; border-radius: 30px; border: 1px solid #ddd; outline: none; font-size: 16px; background: white; }
-
-    /* filter buttons */
-    .filter-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 30px 0 40px; }
-    .filter-btn { padding: 8px 18px; border-radius: 30px; border: 1px solid #cbd5e1; background: transparent; cursor: pointer; font-weight: 500; transition: 0.2s; }
-    .filter-btn.active, .filter-btn:hover { background: #4f46e5; color: white; border-color: #4f46e5; }
-    body.dark .filter-btn { border-color: #334155; color: #e2e8f0; }
-    body.dark .filter-btn.active { background: #4f46e5; color: white; }
+    .search-box input { width: 100%; padding: 14px 20px; border-radius: 30px; border: 1px solid #ddd; outline: none; font-size: 16px; background: white; transition: 0.2s; }
+    .search-box input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79,70,229,0.2); }
 
     /* sections & cards */
     section { padding: 60px 8%; }
     .section-title { font-size: 28px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
     .section-desc { color: #64748b; margin-bottom: 30px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
 
     /* card with icon */
-    .card { background: white; padding: 20px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: 0.3s; opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s forwards; }
+    .card {
+      background: white; padding: 20px; border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: 0.3s;
+      opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s forwards;
+      display: flex; flex-direction: column;
+    }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-    .card h3 { margin-bottom: 10px; font-size: 18px; display: flex; align-items: center; gap: 10px; }
-    .card h3 i { color: #4f46e5; width: 24px; }
-    .card p { font-size: 14px; color: #64748b; margin-bottom: 15px; }
-    .card .btn-sm { padding: 6px 16px; font-size: 14px; background: linear-gradient(90deg, #2563eb, #7c3aed); color: white; border-radius: 30px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .card h3 { margin-bottom: 8px; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+    .card h3 i { color: #4f46e5; width: 24px; font-size: 1.2rem; }
+    .card p { font-size: 14px; color: #64748b; margin-bottom: 8px; flex: 1; }
 
-    /* modal (functional age tool) */
+    /* modal */
     .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 2000; }
     .modal.active { display: flex; }
-    .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 400px; width: 90%; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+    .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 400px; width: 90%; box-shadow: 0 25px 50px rgba(0,0,0,0.3); transform: scale(0.9); animation: modalPop 0.2s forwards; }
+    @keyframes modalPop { to { transform: scale(1); } }
     body.dark .modal-content { background: #1e293b; color: white; }
     .modal-content h2 { margin-bottom: 20px; display: flex; gap: 10px; }
     .modal-content input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #ccc; }
     .modal-content .result { font-size: 20px; font-weight: bold; margin: 15px 0; }
-    .close-modal { float: right; font-size: 28px; cursor: pointer; }
+    .close-modal { float: right; font-size: 28px; cursor: pointer; transition: 0.2s; }
+    .close-modal:hover { transform: scale(1.2); color: #4f46e5; }
 
     footer { background: #0f172a; color: white; padding: 40px 8%; margin-top: 60px; }
-    footer a { color: #cbd5e1; text-decoration: none; }
+    footer a { color: #cbd5e1; text-decoration: none; transition: 0.2s; }
+    footer a:hover { color: white; transform: translateX(3px); display: inline-block; }
     .footer-flex { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 
     /* mobile */
     @media(max-width:768px){
-      nav { display: none; flex-direction: column; background: white; position: absolute; top: 70px; right: 8%; padding: 15px; border-radius: 10px; min-width: 160px; }
+      header { padding: 12px 5%; }
+      .logo { font-size: 18px; }
+      .logo i { font-size: 22px; }
+      nav { display: none; flex-direction: column; background: white; position: absolute; top: 60px; right: 5%; padding: 15px; border-radius: 10px; min-width: 160px; }
       nav.active { display: flex; }
+      nav a { font-size: 16px; margin: 8px 0; }
       .menu-toggle { display: block; }
-      .dark-toggle { margin-left: 0; }
+      .dark-toggle { font-size: 18px; margin-left: 8px; }
+      .filter-btn { padding: 10px 18px; font-size: 14px; }
+      .hero { padding: 120px 5% 60px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo"><i class="fas fa-tools" style="color:#4f46e5;"></i> ALL Tools06</div>
+    <!-- Updated logo to AllTool88.com -->
+    <div class="logo"><i class="fas fa-tools" style="color:#4f46e5;"></i> AllTool88.com</div>
     <div style="display: flex; align-items: center;">
       <button class="dark-toggle" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -108,16 +208,15 @@
   </header>
 
   <div class="hero" id="home">
-    <!-- Updated hero text as requested -->
     <h1>Your Daily Tools, All in One Place</h1>
     <p>Convert, calculate, compress, and simplify your everyday tasks — fast and free.</p>
     <a href="#tools" class="btn">Browse all tools</a>
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Search any tool... (e.g. pdf, qr, color)">
+      <input type="text" id="searchInput" placeholder="🔍 Search any tool... (e.g. pdf, qr, background remove)">
     </div>
   </div>
 
-  <!-- Category filter chips -->
+  <!-- Category filter chips (large) -->
   <div class="filter-container" id="filterContainer">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="image">🖼️ Image</button>
@@ -136,9 +235,9 @@
     <button class="filter-btn" data-filter="color">🎨 Color</button>
   </div>
 
-  <!-- tools section with data-category attributes -->
+  <!-- tools section with data-category attributes (88+ tools) -->
   <section id="tools">
-    <!-- Image Tools (category image) -->
+    <!-- Image Tools (9 cards) -->
     <h2 class="section-title"><i class="fas fa-image"></i> Image Tools</h2>
     <div class="grid">
       <div class="card" data-category="image"><h3><i class="fas fa-exchange-alt"></i> Image Converter</h3><p>Convert image formats instantly.</p><button class="btn-sm" onclick="alert('Demo: Image converter would open')">Use Tool</button></div>
@@ -147,9 +246,12 @@
       <div class="card" data-category="image"><h3><i class="fas fa-crop-alt"></i> Image Cropper</h3><p>Crop images easily.</p><button class="btn-sm" onclick="alert('Demo: Cropper')">Use Tool</button></div>
       <div class="card" data-category="image"><h3><i class="fas fa-font"></i> Image to Text (OCR)</h3><p>Extract text from images.</p><button class="btn-sm" onclick="alert('Demo: OCR')">Use Tool</button></div>
       <div class="card" data-category="image"><h3><i class="fas fa-sync-alt"></i> Image Rotator</h3><p>Rotate or flip images.</p><button class="btn-sm" onclick="alert('Demo: Rotator')">Use Tool</button></div>
+      <div class="card" data-category="image"><h3><i class="fas fa-eraser"></i> Background Remover</h3><p>Remove image backgrounds automatically.</p><button class="btn-sm" onclick="alert('Demo: Background remover would open')">Use Tool</button></div>
+      <div class="card" data-category="image"><h3><i class="fas fa-bolt"></i> Image Enhancer</h3><p>Enhance quality, sharpen & upscale.</p><button class="btn-sm" onclick="alert('Demo: Image enhancer')">Use Tool</button></div>
+      <div class="card" data-category="image"><h3><i class="fas fa-file-pdf"></i> Image to PDF</h3><p>Convert JPG/PNG to PDF instantly.</p><button class="btn-sm" onclick="alert('Demo: Image to PDF')">Use Tool</button></div>
     </div>
 
-    <!-- Document Tools (category document) with Word to PDF -->
+    <!-- Document Tools (7 cards) -->
     <h2 class="section-title"><i class="fas fa-file-alt"></i> Document Tools</h2>
     <div class="grid">
       <div class="card" data-category="document"><h3><i class="fas fa-file-pdf"></i> PDF to Word</h3><p>Convert PDF to Word.</p><button class="btn-sm" onclick="alert('Demo: PDF to Word')">Use Tool</button></div>
@@ -161,7 +263,7 @@
       <div class="card" data-category="document"><h3><i class="fas fa-pen"></i> eSign PDF</h3><p>Sign PDF documents online.</p><button class="btn-sm" onclick="alert('Demo: eSign')">Use Tool</button></div>
     </div>
 
-    <!-- Calculator Tools (category calculator)  - includes functional age demo -->
+    <!-- Calculator Tools (6 cards) with functional age demo -->
     <h2 class="section-title"><i class="fas fa-calculator"></i> Calculator Tools</h2>
     <div class="grid">
       <div class="card" data-category="calculator"><h3><i class="fas fa-flask"></i> Scientific Calculator</h3><p>Advanced calculations.</p><button class="btn-sm" onclick="alert('Demo: Scientific')">Use Tool</button></div>
@@ -172,7 +274,7 @@
       <div class="card" data-category="calculator"><h3><i class="fas fa-coins"></i> Currency Converter</h3><p>Convert currencies.</p><button class="btn-sm" onclick="alert('Demo: Currency')">Use Tool</button></div>
     </div>
 
-    <!-- Text Tools -->
+    <!-- Text Tools (5 cards) -->
     <h2 class="section-title"><i class="fas fa-paragraph"></i> Text Tools</h2>
     <div class="grid">
       <div class="card" data-category="text"><h3><i class="fas fa-text-height"></i> Case Converter</h3><p>UPPER, lower, Title case.</p><button class="btn-sm" onclick="alert('Demo: Case')">Use Tool</button></div>
@@ -182,7 +284,7 @@
       <div class="card" data-category="text"><h3><i class="fas fa-dice"></i> Lorem Ipsum</h3><p>Generate placeholder.</p><button class="btn-sm" onclick="alert('Demo: Lorem')">Use Tool</button></div>
     </div>
 
-    <!-- Developer Tools -->
+    <!-- Developer Tools (5 cards) -->
     <h2 class="section-title"><i class="fas fa-code"></i> Developer Tools</h2>
     <div class="grid">
       <div class="card" data-category="dev"><h3><i class="fas fa-brackets-curly"></i> JSON Formatter</h3><p>Pretty‑print JSON.</p><button class="btn-sm" onclick="alert('Demo: JSON')">Use Tool</button></div>
@@ -192,7 +294,7 @@
       <div class="card" data-category="dev"><h3><i class="fas fa-lock"></i> Base64 Encode/Decode</h3><p>Encode to base64.</p><button class="btn-sm" onclick="alert('Demo: Base64')">Use Tool</button></div>
     </div>
 
-    <!-- Unit Converters -->
+    <!-- Unit Converters (5 cards) -->
     <h2 class="section-title"><i class="fas fa-ruler"></i> Unit Converters</h2>
     <div class="grid">
       <div class="card" data-category="unit"><h3><i class="fas fa-ruler"></i> Length Converter</h3><p>m, cm, inch, feet.</p><button class="btn-sm" onclick="alert('Demo: Length')">Use Tool</button></div>
@@ -202,7 +304,7 @@
       <div class="card" data-category="unit"><h3><i class="fas fa-flask"></i> Volume Converter</h3><p>liter, gallon, ml.</p><button class="btn-sm" onclick="alert('Demo: Volume')">Use Tool</button></div>
     </div>
 
-    <!-- Password & Security -->
+    <!-- Password & Security (4 cards) -->
     <h2 class="section-title"><i class="fas fa-key"></i> Password & Security</h2>
     <div class="grid">
       <div class="card" data-category="password"><h3><i class="fas fa-key"></i> Password Generator</h3><p>Strong random passwords.</p><button class="btn-sm" onclick="alert('Demo: Password Generator')">Use Tool</button></div>
@@ -211,7 +313,7 @@
       <div class="card" data-category="password"><h3><i class="fas fa-shield-halved"></i> SHA Generator</h3><p>SHA‑1, SHA‑256.</p><button class="btn-sm" onclick="alert('Demo: SHA')">Use Tool</button></div>
     </div>
 
-    <!-- SEO Tools -->
+    <!-- SEO Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-chart-line"></i> SEO & Webmaster</h2>
     <div class="grid">
       <div class="card" data-category="seo"><h3><i class="fas fa-tags"></i> Meta Tag Generator</h3><p>Generate meta tags.</p><button class="btn-sm" onclick="alert('Demo: Meta')">Use Tool</button></div>
@@ -219,7 +321,7 @@
       <div class="card" data-category="seo"><h3><i class="fas fa-robot"></i> Robots.txt Generator</h3><p>Create robots.txt.</p><button class="btn-sm" onclick="alert('Demo: Robots')">Use Tool</button></div>
     </div>
 
-    <!-- Social Media Tools -->
+    <!-- Social Media Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-share-alt"></i> Social Media Tools</h2>
     <div class="grid">
       <div class="card" data-category="social"><h3><i class="fab fa-youtube"></i> YT Thumbnail</h3><p>Get any thumbnail.</p><button class="btn-sm" onclick="alert('Demo: YT Thumb')">Use Tool</button></div>
@@ -227,7 +329,7 @@
       <div class="card" data-category="social"><h3><i class="fas fa-hashtag"></i> Hashtag Generator</h3><p>Popular hashtags.</p><button class="btn-sm" onclick="alert('Demo: Hashtag')">Use Tool</button></div>
     </div>
 
-    <!-- Math Tools -->
+    <!-- Math Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-square-root-alt"></i> Math Tools</h2>
     <div class="grid">
       <div class="card" data-category="math"><h3><i class="fas fa-percent"></i> Percentage Calculator</h3><p>Find % easily.</p><button class="btn-sm" onclick="alert('Demo: Percent')">Use Tool</button></div>
@@ -235,7 +337,7 @@
       <div class="card" data-category="math"><h3><i class="fas fa-superscript"></i> Exponent Calculator</h3><p>Powers and exponents.</p><button class="btn-sm" onclick="alert('Demo: Exponent')">Use Tool</button></div>
     </div>
 
-    <!-- Health & Fitness -->
+    <!-- Health & Fitness (3 cards) -->
     <h2 class="section-title"><i class="fas fa-heart"></i> Health & Fitness</h2>
     <div class="grid">
       <div class="card" data-category="health"><h3><i class="fas fa-fire"></i> Calorie Calculator</h3><p>Maintain / lose weight.</p><button class="btn-sm" onclick="alert('Demo: Calorie')">Use Tool</button></div>
@@ -243,7 +345,7 @@
       <div class="card" data-category="health"><h3><i class="fas fa-bed"></i> Sleep Calculator</h3><p>Best bedtime.</p><button class="btn-sm" onclick="alert('Demo: Sleep')">Use Tool</button></div>
     </div>
 
-    <!-- File Converter Tools -->
+    <!-- File Converter Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-file-audio"></i> File Converter Tools</h2>
     <div class="grid">
       <div class="card" data-category="file"><h3><i class="fas fa-music"></i> MP3 Converter</h3><p>Convert to MP3.</p><button class="btn-sm" onclick="alert('Demo: MP3')">Use Tool</button></div>
@@ -251,7 +353,7 @@
       <div class="card" data-category="file"><h3><i class="fas fa-file-zipper"></i> ZIP Extractor</h3><p>Extract ZIP/RAR.</p><button class="btn-sm" onclick="alert('Demo: ZIP')">Use Tool</button></div>
     </div>
 
-    <!-- QR Code Tools -->
+    <!-- QR Code Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-qrcode"></i> QR Code Tools</h2>
     <div class="grid">
       <div class="card" data-category="qr"><h3><i class="fas fa-qrcode"></i> QR Generator</h3><p>Create QR for URL/text.</p><button class="btn-sm" onclick="alert('Demo: QR Gen')">Use Tool</button></div>
@@ -259,14 +361,14 @@
       <div class="card" data-category="qr"><h3><i class="fas fa-id-card"></i> vCard QR</h3><p>Digital business card.</p><button class="btn-sm" onclick="alert('Demo: vCard')">Use Tool</button></div>
     </div>
 
-    <!-- Color Tools -->
+    <!-- Color Tools (3 cards) -->
     <h2 class="section-title"><i class="fas fa-palette"></i> Color Tools</h2>
     <div class="grid">
       <div class="card" data-category="color"><h3><i class="fas fa-eye-dropper"></i> Color Picker</h3><p>Pick colors from image.</p><button class="btn-sm" onclick="alert('Demo: Color Picker')">Use Tool</button></div>
       <div class="card" data-category="color"><h3><i class="fas fa-code"></i> HEX to RGB</h3><p>Convert HEX to RGB.</p><button class="btn-sm" onclick="alert('Demo: HEX2RGB')">Use Tool</button></div>
       <div class="card" data-category="color"><h3><i class="fas fa-adjust"></i> Contrast Checker</h3><p>WCAG contrast.</p><button class="btn-sm" onclick="alert('Demo: Contrast')">Use Tool</button></div>
     </div>
-    <p style="text-align:center; margin-top:40px; opacity:0.8;">✨ 85+ tools — fully functional demo for Age Calculator below ✨</p>
+    <p style="text-align:center; margin-top:40px; opacity:0.8;">✨ 88+ tools — fully functional demo for Age Calculator below ✨</p>
   </section>
 
   <!-- Modal for Age Calculator (functional sample) -->
@@ -284,8 +386,9 @@
   <footer id="contact">
     <div class="footer-flex">
       <div>
-        <h3><i class="fas fa-tools"></i> ALL Tools06</h3>
-        <p>Simplifying your digital life · 85+ tools</p>
+        <!-- Updated footer logo -->
+        <h3><i class="fas fa-tools"></i> AllTool88.com</h3>
+        <p>Simplifying your digital life · 88+ tools</p>
       </div>
       <div>
         <p>Email: <a href="mailto:alltools06@gmail.com">alltools06@gmail.com</a></p>
@@ -295,12 +398,10 @@
   </footer>
 
   <script>
-    // --- Mobile menu toggle ---
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
     }
 
-    // --- Dark / Light mode toggle ---
     const darkToggle = document.getElementById('darkModeToggle');
     const body = document.body;
     darkToggle.addEventListener('click', () => {
@@ -315,7 +416,6 @@
       }
     });
 
-    // --- Live search ---
     document.getElementById("searchInput").addEventListener("keyup", function() {
       let filter = this.value.toLowerCase();
       let cards = document.querySelectorAll(".card");
@@ -325,7 +425,6 @@
       });
     });
 
-    // --- Category filter buttons ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.card');
     filterButtons.forEach(btn => {
@@ -343,7 +442,7 @@
       });
     });
 
-    // --- Age Calculator Modal (functional sample) ---
+    // Age modal
     const modal = document.getElementById('ageModal');
     const ageBtn = document.getElementById('ageModalBtn');
     const closeModal = document.getElementById('closeModal');
